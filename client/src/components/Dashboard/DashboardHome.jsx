@@ -1,6 +1,7 @@
 import { useAuth } from '../../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import SkillsInventory from './SkillsInventory';
+import { JobAnalyzer } from '../Analysis';
 
 const DashboardHome = () => {
   const { user, logout } = useAuth();
@@ -34,14 +35,12 @@ const DashboardHome = () => {
         {/* Skills Inventory Section */}
         <SkillsInventory />
 
-        <div className="features-grid" style={{ marginTop: '2rem' }}>
-          <div className="feature-card">
-            <div className="feature-icon">🎯</div>
-            <h3>Job Analysis</h3>
-            <p>Analyze job descriptions and identify skill gaps</p>
-            <span className="coming-soon">Coming Soon</span>
-          </div>
+        {/* Job Analyzer Section */}
+        <div style={{ marginTop: '2rem' }}>
+          <JobAnalyzer />
+        </div>
 
+        <div className="features-grid" style={{ marginTop: '2rem' }}>
           <div className="feature-card">
             <div className="feature-icon">📚</div>
             <h3>Learning Path</h3>

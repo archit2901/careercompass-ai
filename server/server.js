@@ -18,6 +18,7 @@ const { apiLimiter } = require("./middleware/rateLimiter");
 // Import routes
 const authRoutes = require("./routes/auth");
 const profileRoutes = require("./routes/profile");
+const analysisRoutes = require("./routes/analysis");
 
 // Initialize Express app
 const app = express();
@@ -54,6 +55,7 @@ app.use("/api", apiLimiter);
 // API Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/profile", profileRoutes);
+app.use("/api/analysis", analysisRoutes);
 
 // Health check route
 app.get("/", (req, res) => {
